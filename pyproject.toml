@@ -1,0 +1,27 @@
+[project]
+name = "llm-degeneration-mitigation"
+version = "0.1.0"
+description = "Mitigate excessive output length and token-level repetition with DPO"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "accelerate==1.4.0",
+    "datasets==4.8.5",
+    "lighteval[vllm]==0.13.0",
+    "numpy>=2.2.6",
+    "peft>=0.7.0",
+    "trl>=0.12.0",
+    "torch==2.7.1",
+    "transformers>=4.55.0,<5",
+    "vllm>=0.10.0,<0.10.2",
+    "wandb>=0.27.0",
+    "matplotlib>=3.10.9",
+    "pandas>=3.0.3",
+    "pyarrow>=24.0.0",
+    "langdetect==1.0.9",
+    "types-pyyaml>=6.0.12.20260518",
+]
+
+[tool.pyrefly]
+project-includes = ["src/**/*.py"]
+search-path = ["src", "src/attack"]

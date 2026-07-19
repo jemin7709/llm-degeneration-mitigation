@@ -1,0 +1,33 @@
+model_name: Qwen/Qwen3-0.6B
+model_tag: qwen3-0.6b
+
+data_name: math_train
+data_path: data/math/train.jsonl
+root_dir: outputs/attack
+save_dir: null
+
+start_index: 0
+end_index: null
+limit: null
+
+adv_len: 30
+steps: 50
+topk: 64
+num_candidate: 128
+once_forward_batch: 16
+eval_interval: 1
+prompt_batch_size: 200
+
+sample_times: 16
+max_new_tokens: 2048
+temperature: 0.6
+top_p: 0.95
+top_k: 20
+
+prompt_success_rate_threshold: 0.125
+success_rate_threshold: 0.9
+entropy_threshold: 0.1
+
+seed: 23
+vllm_sleep_level: 1
+vllm_gpu_memory_utilization: 0.6

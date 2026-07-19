@@ -1,0 +1,22 @@
+{
+  "base_model": "Qwen/Qwen3-0.6B",
+  "source_dataset": "MATH train",
+  "attack_method": "LoopLLM multi-prompt GCG",
+  "attack_seed": 23,
+  "format": "DPO chat messages",
+  "transformation": "Kept full prompt/chosen/rejected messages, removed all other fields, and added a content-derived id and variant.",
+  "counts": {
+    "naive": {
+      "train": 11400,
+      "validation": 600
+    },
+    "math_solution": {
+      "train": 6356,
+      "validation": 334
+    },
+    "data_filtering": {
+      "train": 3443,
+      "validation": 181
+    }
+  }
+}
