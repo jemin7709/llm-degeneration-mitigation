@@ -7,6 +7,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 torch.backends.cuda.enable_mem_efficient_sdp(False)  # torch 2.7.1 fp32 mem-efficient SDPA is wrong on Blackwell (NaN GCG grads)
+torch.backends.cuda.matmul.allow_tf32 = True  # TF32 GEMMs: ~1.7x faster HF phase, float-level diff only (재민 11/11 15:46)
+torch.backends.cudnn.allow_tf32 = True
 
 if TYPE_CHECKING:
     from vllm.inputs import TokensPrompt
