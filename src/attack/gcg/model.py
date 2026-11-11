@@ -6,6 +6,8 @@ from typing import TYPE_CHECKING, Any
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+torch.backends.cuda.enable_mem_efficient_sdp(False)  # torch 2.7.1 fp32 mem-efficient SDPA is wrong on Blackwell (NaN GCG grads)
+
 if TYPE_CHECKING:
     from vllm.inputs import TokensPrompt
 
